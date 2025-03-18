@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>🐱 Random Cat Info</title>
+  <style>
+    /* Basic Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Body Styling */
+    body {
+      background: linear-gradient(135deg, #f8f9fa, #ebedef);
+      font-family: sans-serif;
+      text-align: center;
+      min-height: 100vh;
+      padding: 30px;
+      color: #333;
+    }
+
+    /* Page Title */
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+    }
+
+    /* Container for Cat Image, Button, and Fact */
+    .cat-container {
+      background: #fff;
+      max-width: 600px;
+      margin: 0 auto 20px; /* center + spacing below */
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+    }
+
+    /* Cat Image */
+    .cat-image {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Refresh (Get Another Cat) Button */
+    .refresh-button {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 12px 20px;
+      font-size: 1rem;
+      font-weight: bold;
+      color: #fff;
+      background: linear-gradient(135deg, #007bff, #0056b3);
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+      transition: background 0.3s, transform 0.2s;
+    }
+    .refresh-button:hover {
+      background: linear-gradient(135deg, #0056b3, #003d80);
+      transform: translateY(-2px);
+    }
+    .refresh-button:active {
+      transform: translateY(0);
+    }
+
+    /* Fact Section */
+    .fact {
+      margin-top: 20px;
+      background: #f9f9f9;
+      border-radius: 6px;
+      padding: 15px;
+    }
+    .fact h2 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+    .fact p {
+      font-size: 1rem;
+      color: #555;
+      line-height: 1.4;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Page Heading -->
+  <h1>🐱 Random Cat Info</h1>
+
+  <!-- Cat Container -->
+  <div class="cat-container">
+    <img 
+      class="cat-image" 
+      src="{{ image_url }}" 
+      alt="Random Cat"
+    />
+    
+    <button id="refreshButton" class="refresh-button">
+      🔄 Get Another Cat
+    </button>
+
+    <div class="fact">
+      <h2>Did You Know?</h2>
+      <p>{{ fact }}</p>
+    </div>
+  </div>
+
+  <!-- JavaScript for the Button -->
+  <script>
+    // Reload the page on button click
+    document.getElementById('refreshButton').addEventListener('click', () => {
+      window.location.reload();
+    });
+  </script>
+
+</body>
+</html>
