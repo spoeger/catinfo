@@ -1,10 +1,14 @@
-from flask import Flask, render_template, jsonify
+from flask import Flask, render_template, redirect
 import requests
 
 app = Flask(__name__)
 
 CAT_API_URL = "https://api.thecatapi.com/v1/images/search"
 CAT_FACT_API_URL = "https://meowfacts.herokuapp.com/"
+
+@app.route('/')
+def index():
+    return redirect('/cat-info')
 
 @app.route('/cat-info')
 def cat_info():
