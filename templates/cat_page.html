@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <!-- Added meta viewport for mobile responsiveness -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>🐱 Random Cat Info</title>
   <style>
     /* Basic Reset */
@@ -83,6 +85,30 @@
       font-size: 1rem;
       color: #555;
       line-height: 1.4;
+    }
+
+    /* Mobile Styles */
+    @media (max-width: 600px) {
+      body {
+        padding: 10px;
+      }
+      h1 {
+        font-size: 1.5rem;
+      }
+      .cat-container {
+        padding: 10px;
+        margin: 0 auto 15px;
+      }
+      .refresh-button {
+        font-size: 0.9rem;
+        padding: 10px 15px;
+      }
+      .fact h2 {
+        font-size: 1rem;
+      }
+      .fact p {
+        font-size: 0.9rem;
+      }
     }
   </style>
 </head>
